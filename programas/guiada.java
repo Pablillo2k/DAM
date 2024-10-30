@@ -25,6 +25,7 @@ public class guiada {
             }
         }
         System.out.println("El precio del seguro es de "+precio+"Euros");
+        System.out.println("El precio del seguro es de "+precio+"Euros");
 
     }
 
