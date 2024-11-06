@@ -13,6 +13,9 @@ public class Bol3_Ejer11 {
         
     }
     //Aproximación de Taylor con funcion factorial y potencia
+    /*
+     * @param la x será la base ne 
+     */
     public static double aproximacionTaylor(int x, double n) {
         double resultado = 0;
         for (int i = 0; i <= n; i = i+2) {
