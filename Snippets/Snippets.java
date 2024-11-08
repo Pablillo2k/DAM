@@ -2,10 +2,6 @@ import java.util.Scanner;
 
 public class Snippets {
     public static void main(String[] args) {
-
-        scn/ msg/ menu
-
-        Scanner sc = new Scanner(System.in);
         Scanner sc = new Scanner(System.in);
         int opcion;
         do {

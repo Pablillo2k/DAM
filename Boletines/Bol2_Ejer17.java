@@ -21,7 +21,7 @@ public class Bol2_Ejer17 {
                 if(i % numero == 0){
                     System.out.println(i);
                     acumulador += i;
-                };
+                }
             }
             System.out.println("La suma total es: " + acumulador);
             acumulador = 0;
@@ -35,10 +35,10 @@ public class Bol2_Ejer17 {
                 System.out.println("Adiós!");
             } else {
                 System.out.println("Introduce un carácter válido!");
-                opcionRepetir = false;
+                opcionRepetir = false;  
             }
         }
-        while (opcionRepetir);
+        while (opcion == "S");
 
     }
 }
