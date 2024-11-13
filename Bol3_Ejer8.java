@@ -12,37 +12,28 @@ public class Bol3_Ejer8 {
         if (n <= 1) {
             return false;
         }
-        if (n == 2 || n == 3) {
+        if (n == 2 || n == 3 || n ==5 || n ==7 ) {
             return true;
         }
-        if (n % 2 == 0 || n % 3 == 0 || n % 5 == 0) {
+        if (n % 2 == 0 || n % 3 == 0 || n % 5 == 0 || n % 7 == 0) {
             return false;
-        } else {
+        } 
+        else {
             return true;
         }
     }
+    // Forma mas corta y optima que el IF abajo (No cuadraría con los comentarios de la funcion)
+        // for (int i = 2; i < n; i++) {
+        //     if (n % i == 0) {
+        //         return false;
+        //     }
+        // }
+        // return true; 
+    
 
     public static void main(String[] args) throws Exception {
         System.out.println("Dime un numero mayor que 2");
         Scanner sc = new Scanner(System.in);
-        
-        // Apertura
-        PrintWriter f = new PrintWriter("Ej8.txt");
-        // Escritura
-        for (int i = 3; i <= 100; i++) {
-            f.print(i + "\n");
-        }
-
-        // int num = sc.nextInt();
-        // while (num <= 2) {
-        //     System.out.println("Dime un numero mayor que 2");
-        //     num = sc.nextInt();
-        // }
-        // for (int i = 2; i <= num; i++) {
-        //     if (Primo(i)) {
-        //         System.out.print(i + " ");
-        //     }
-        // }
         int num;
         int opcion;
         System.out.println("\nElige una opción");
@@ -54,13 +45,16 @@ public class Bol3_Ejer8 {
             opcion = sc.nextInt();
             switch (opcion) {
                 case 1:
-                    // Código opcion 1
-                    System.out.println("Dame un número para enseñar todos los primos menores que el");
+                // Código opcion 1
+                System.out.println("Dame un número para enseñar todos los primos menores que el");
+                num = sc.nextInt();
+                while (num < 1) {
+                    System.out.println("Dime un numero mayor que 1");
                     num = sc.nextInt();
-                    while (num < 1) {
-                        System.out.println("Dime un numero mayor que 1");
-                        num = sc.nextInt();
-                    }
+                }
+                // Apertura
+                PrintWriter f = new PrintWriter("BoletinFunciones/Ej8.txt");
+                // Escritura
                     for (int i = num; i > 1; i--) {
                         if (Primo(i)) {
                             System.out.print(i + "\n");
@@ -72,7 +66,7 @@ public class Bol3_Ejer8 {
                     break;
                 case 2:
                 // Apertura del archivo Ej9.txt en modo escritura y escritura de los numeros del 2 al 100
-                    PrintWriter w = new PrintWriter("Ej9.txt");
+                    PrintWriter w = new PrintWriter("BoletinFunciones/Ej9.txt");
                     // Código opcion 2
                     //Escritura
                     System.out.println("Esta opción lee los numeros del archivo y dice si son primos o no");
@@ -81,8 +75,8 @@ public class Bol3_Ejer8 {
                     }
                     //Cierre
                     w.close();
-                    //Apertura 
-                    Scanner l = new Scanner(new File("Ej9.txt"));
+                    //Apertura del Archivo en modo lectura y lectura de los numeros anteriormente escritos para comprobar si son primos o no
+                    Scanner l = new Scanner(new File("BoletinFunciones/Ej9.txt"));
                         int n;
                         //Lectura
                         while (l.hasNextInt()) {

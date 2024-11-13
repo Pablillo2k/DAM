@@ -16,7 +16,7 @@ public class Bol3_Ejer7 {
         File file = new File(archivo);
         Scanner f = new Scanner(file);
         while (f.hasNextLine()) {
-            archivo += f.nextLine() + "\n";
+            archivo +=f.nextLine() + "\n";
         }
         f.close();
         return archivo;
@@ -36,7 +36,7 @@ public class Bol3_Ejer7 {
         currentContent += newText;
         // Escribe el archivo con el contenido actualizado
         FileWriter writer = new FileWriter(archivo);
-        writer.write(currentContent);
+        writer.write(currentContent+"\n");
         writer.close();
     }
     /**
@@ -49,20 +49,20 @@ public class Bol3_Ejer7 {
     public static void appendFile2(String archivo, String newText) throws IOException {
         // Abre el archivo en modo añadir (true) para que se escriba al final del archivo sin sobreescribir lo anterior
         FileWriter writer = new FileWriter(archivo, true);
-        writer.write(newText);
+        writer.write(newText+"\n");
         writer.close();
     }
 
     public static void main(String[] args) throws Exception {
         // Probar saveFile
-        String archivoContenido = saveFile("Ej1.txt");
-        System.out.println("Contenido del archivo:\n" + archivoContenido);
+        String archivoContenido = saveFile("BoletinFunciones/Ej1.txt");
+        System.out.println("\nContenido del archivo:\n" + archivoContenido);
         // Probar appendFile2
-        appendFile2("Ej1.txt", "\nEste es el texto que se añadirá al final del archivo\n");
-        System.out.println("Contenido del archivo después de agregar con appendFile2:\n" + saveFile("Ej1.txt"));
+        appendFile2("BoletinFunciones/Ej1.txt", "\nEste es el texto que se añadirá al final del archivo\n");
+        System.out.println("Contenido del archivo después de agregar con appendFile2:\n" + saveFile("BoletinFunciones/Ej1.txt"));
         // Probar appendFile
-        appendFile("Ej1.txt", "\nTexto añadido al final\n");
-        System.out.println("Contenido del archivo después de agregar con appendFile:\n" + saveFile("Ej1.txt"));
+        appendFile("BoletinFunciones/Ej1.txt", "\nTexto añadido al final\n");
+        System.out.println("Contenido del archivo después de agregar con appendFile:\n" + saveFile("BoletinFunciones/Ej1.txt"));
     }
 }
 // **7. a) Haz una función llamada loadFile a la cual se le pasa una cadena que

@@ -3,16 +3,15 @@ import java.util.Scanner;
 public class Bol3_Ejer11 {
 
     /**
-     * Funcion que pide un numero al usuario para calcular su factorial
-     * @param nums el número por el que se irán multiplicando los números para calcular el factorial
+     * Funcion que  calcular su factorial
+     * @param nums el número a propcesar
      * @return el resultado del factorial
      */
     public static long factorial(int nums) {
-        Scanner sc = new Scanner(System.in);
         nums = 1;
         for (int i = nums; i > 1; i--) {
             nums = nums * i;
-            System.out.println(nums);
+           // System.out.println(nums);
         }
         return nums;
     }
@@ -22,24 +21,25 @@ public class Bol3_Ejer11 {
      * Funcion que hace el cálculo de la aproximación Taylor segun dos variables que
      * introduces, la primera corresponde al valor de las X en el dividendo y la
      * segunda corresponde tanto al valor de los exponentes como al valor de los Factoriales
-     * @param la x será la base y la n será el limite que le pondremos al exponente
-     * de la base y a el factorial que divide a la misma base
+     * 
+     * Calcula una paroximacin del coseno
+     * @param la x angulo en radianes
      * @return el resultado de hacer la cuenta de la aproximacion Taylor
      */
     public static double aproximacionTaylor(double x, int n) {
         double resultado = 0;
         for (int i = 0; i <= n; i = i += 2) {
-            resultado = 1 - (Bol3_Ejer6.potencia(x, i) / factorial(i));
+            resultado = 1 - (Bol3_Ejer6.potencia(x, i) / factorial(i));  // OJO, se alternan sumas y restas
         }
         return resultado;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) {// TODO comparar resultados con Math.cos
         Scanner sc = new Scanner(System.in);
         double resultado;
         for (double x = 0.1; x <= 1; x = x+0.1) {
             resultado = aproximacionTaylor(x, 4);
-            System.out.printf("Coseno de %.1f es %.5f \n",x,resultado);
+            System.out.printf("Coseno de %.1f es %8.5f \n",x,resultado);
         }
         sc.close();
     }

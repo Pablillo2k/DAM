@@ -16,8 +16,6 @@ public class Bol3_Ejer3 {
             n = sc.nextDouble();
         }
         return n;
-        
-        
     }
     /**
      * Pide un radio y una altura y devuelve la superficie de el cilindro con esos datos

@@ -45,14 +45,14 @@ public class Bol3_Ejer1 {
         lineasN(10);
         System.out.println("Dime un número");
         int n = sc.nextInt();
-        System.out.println(par(n));
-        System.out.println(positivo(n));
+        System.out.println("\n"+par(n));
+        System.out.println("\n"+positivo(n));
         
         //Escritura archivo
         
-        f.println(nombre);
-        f.println(n);
-        f.print(positivo(n));
+        f.println(nombre+"\n");
+        f.println(n +"\n");
+        f.println(positivo(n));
         f.println(par(n));
         
         //Cierre
